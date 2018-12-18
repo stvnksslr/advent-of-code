@@ -43,9 +43,9 @@ class Day1Test(TestCase):
 
     def test__day1_challenge(self):
         """
-        Method: find_duplicates()
-        Precondition: input a list of numbers, first set of numbers to repeat will be returned
-        Result: should return -18 as it is the first set in the list to repeat
+        Method: Challenge
+        Precondition: do multiple passes over the list until it finds duplicate sums
+        Result: should exit the loop upon finding the first duplicate sum pair, that sum should be 7614
         """
         current_frequency = 0
         list_of_frequencies = day1_constants.TEST_LIST
