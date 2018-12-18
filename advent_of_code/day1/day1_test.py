@@ -28,8 +28,7 @@ class Day1Test(TestCase):
         """
 
         summed_frequencies = day1.Day1.adjust_frequency(
-            new_frequency=self.new_frequency,
-            current_frequency=self.current_frequency
+            new_frequency=self.new_frequency, current_frequency=self.current_frequency
         )
         self.assertEqual(summed_frequencies, self.expected_adjusted_frequency)
 

@@ -1,7 +1,7 @@
 import csv
 from pathlib import Path
 
-data_folder = Path("advent_of_code/day1")
+data_folder = Path("csv")
 file_to_open = data_folder / "1st_challenge.csv"
 
 
