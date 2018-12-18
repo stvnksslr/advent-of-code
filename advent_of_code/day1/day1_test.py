@@ -40,3 +40,26 @@ class Day1Test(TestCase):
         """
         first_pair = day1.Day1.find_duplicates(self.expected_list)
         self.assertEqual(first_pair, self.first_pair_match)
+
+    def test__day1_challenge(self):
+        """
+        Method: find_duplicates()
+        Precondition: input a list of numbers, first set of numbers to repeat will be returned
+        Result: should return -18 as it is the first set in the list to repeat
+        """
+        current_frequency = 0
+        list_of_frequencies = day1_constants.TEST_LIST
+        list_of_sums = []
+
+        duplicate_checker = True
+
+        while duplicate_checker:
+            for frequency in list_of_frequencies:
+                current_frequency = frequency + current_frequency
+                list_of_sums.append(current_frequency)
+            first_pair = day1.Day1.find_duplicates(list_of_sums)
+            if first_pair:
+                print(first_pair)
+                duplicate_checker = False
+                self.assertEqual(first_pair, 76414)
+        self.assertFalse(duplicate_checker)
