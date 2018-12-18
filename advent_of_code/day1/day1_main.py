@@ -10,7 +10,7 @@ while duplicate_checker:
     for frequency in list_of_frequencies:
         current_frequency = frequency + current_frequency
         list_of_sums.append(current_frequency)
-    first_pair = day1.Day1.find_duplicates(list_of_sums)
+    first_pair = day1.Day1.find_duplicates()
     if first_pair:
         print(first_pair)
         duplicate_checker = False
