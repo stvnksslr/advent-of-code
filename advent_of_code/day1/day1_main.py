@@ -1,5 +1,4 @@
-import day1
-import day1_constants
+from advent_of_code.day1 import day1, day1_constants
 
 current_frequency = 0
 list_of_frequencies = day1_constants.TEST_LIST
@@ -16,4 +15,3 @@ while duplicate_checker:
         print(first_pair)
         duplicate_checker = False
         break
-    

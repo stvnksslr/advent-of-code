@@ -1,5 +1,4 @@
-import day1
-import day1_constants
+from advent_of_code.day1 import day1, day1_constants
 
 
 class TestDay1Parse:
@@ -7,8 +6,7 @@ class TestDay1Parse:
         self.expected_list = day1_constants.TEST_LIST
         self.input_frequency = 1
         self.current_frequency = 1
-        self.expected_adjusted_frequency = self.input_frequency +\
-            self.current_frequency
+        self.expected_adjusted_frequency = self.input_frequency + self.current_frequency
 
     def test__day1_parser_returns_expected_list(self):
         """
@@ -27,8 +25,7 @@ class TestDay1Parse:
         Result: 1 + 1 should return 2
         """
         summed_frequencies = day1.Day1.adjust_frequency(
-            new_frequency=self.input_frequency,
-            current_frequency=self.current_frequency
+            new_frequency=self.input_frequency, current_frequency=self.current_frequency
         )
         assert summed_frequencies == self.expected_adjusted_frequency
 

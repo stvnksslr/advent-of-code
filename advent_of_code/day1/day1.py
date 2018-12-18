@@ -15,10 +15,10 @@ class Day1:
         return adjusted_frequency
 
     def parse_csv(list_of_frequencies):
-        with open("1st_challenge.csv") as csv_file:
+        with open("advent_of_code/day1/1st_challenge.csv") as csv_file:
             parse_reader = csv.reader(csv_file, delimiter=",")
 
             for row in parse_reader:
                 current_row = int(row[0])
                 list_of_frequencies.append(current_row)
-            return list_of_frequencies        
+            return list_of_frequencies
