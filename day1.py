@@ -21,4 +21,4 @@ class Day1:
             for row in parse_reader:
                 current_row = int(row[0])
                 list_of_frequencies.append(current_row)
-            return list_of_frequencies
+            return list_of_frequencies        
