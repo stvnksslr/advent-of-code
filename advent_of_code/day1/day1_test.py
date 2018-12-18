@@ -9,6 +9,8 @@ class Day1Test(TestCase):
         self.current_frequency = 1
         self.expected_adjusted_frequency = self.new_frequency + self.current_frequency
         self.first_pair_match = -18
+        self.sum_of_summed_list = 547
+        self.first_pair_match_of_summed_list = 76414
 
     def test__day1_parser_returns_expected_list(self):
         """
@@ -41,11 +43,27 @@ class Day1Test(TestCase):
         first_pair = day1.Day1.find_duplicates(self.expected_list)
         self.assertEqual(first_pair, self.first_pair_match)
 
-    def test__day1_challenge(self):
+    def test__day1_challenge_part1(self):
+        """
+        Method: Challenge
+        Precondition: run through the the list and sum the results of each index
+        Result: final sum should equal 564
+        """
+        current_frequency = 0
+        list_of_frequencies = day1_constants.TEST_LIST
+        list_of_sums = []
+
+        for frequency in list_of_frequencies:
+            current_frequency = frequency + current_frequency
+            list_of_sums.append(current_frequency)
+        self.assertEqual(current_frequency, self.sum_of_summed_list)
+
+    def test__day1_challenge_part2(self):
         """
         Method: Challenge
         Precondition: do multiple passes over the list until it finds duplicate sums
-        Result: should exit the loop upon finding the first duplicate sum pair, that sum should be 7614
+        Result: should exit the loop upon finding the first duplicate sum pair, 
+        that sum should be 7614
         """
         current_frequency = 0
         list_of_frequencies = day1_constants.TEST_LIST
@@ -61,5 +79,5 @@ class Day1Test(TestCase):
             if first_pair:
                 print(first_pair)
                 duplicate_checker = False
-                self.assertEqual(first_pair, 76414)
+                self.assertEqual(first_pair, self.first_pair_match_of_summed_list)
         self.assertFalse(duplicate_checker)
