@@ -13,6 +13,9 @@ class Day2Test(TestCase):
         self.box_id_with_no_duplicates = BoxIdTally(double=0, triple=0)
         self.box_id_with_2_double_1_triple = BoxIdTally(double=2, triple=1)
         self.list_of_3_box_ids = ["abcdef", "bababc", "abbcde"]
+        self.list_of_3_box_ids_similar = ["aaa", "aab", "abc"]
+        self.hamming_test_of_1_aaa = "aaa"
+        self.hamming_test_of_1_aac = "aac"
         self.list_of_3_box_ids_hash = 2
         self.list_of_box_ids_hash = 6642
 
@@ -70,6 +73,27 @@ class Day2Test(TestCase):
         list_hash = day2.Day2.create_hash_from_duplicates(repeated_letters)
         self.assertEqual(list_hash, self.list_of_3_box_ids_hash)
 
+    def test__find_similar_strings(self):
+        """
+        Method: find_similar_strings()
+        Precondition: method should take a list of strings and 
+        return ones that only differ by 1 character
+        Result: [aaa, aab, abc] -> [aa, aa]
+        """
+        similar_strings = day2.Day2.find_similar_strings(self.list_of_3_box_ids_similar)
+        self.assertEqual(len(similar_strings), 2)
+
+    def test__hamming_distance_between_strings(self):
+        """
+        Method: hamming_distance()
+        Precondition: two strings are entered as input they differ by 1
+        Result: hamming distance method should return 1
+        """
+        distance_hammed = day2.Day2.distance_hammed(
+            self.hamming_test_of_1_aaa, self.hamming_test_of_1_aac
+        )
+        self.assertEqual(1, distance_hammed)
+
     def test__Challenge_day2_part1(self):
         """
         Method: create_hash_from_duplicates
@@ -82,3 +106,12 @@ class Day2Test(TestCase):
         )
         list_hash = day2.Day2.create_hash_from_duplicates(repeated_letters)
         self.assertEqual(list_hash, self.list_of_box_ids_hash)
+
+    def test__Challenge_day2_part2(self):
+        """
+        Method: Find strings that are within 1 character of eachother
+        Precondition: Entering large list and we should find the common character set
+        Result: TOOD:
+        """
+        similar_strings = day2.Day2.find_similar_strings(self.list_of_box_ids)
+        self.assertTrue(similar_strings)

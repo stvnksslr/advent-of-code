@@ -1,9 +1,5 @@
 from collections import Counter
-from pathlib import Path
 from advent_of_code.day2.box_id_tally import BoxIdTally
-
-data_folder = Path("csv")
-file_to_open = data_folder / "2nd_challenge.csv"
 
 
 class Day2:
@@ -29,6 +25,23 @@ class Day2:
         return char_tally
 
     @staticmethod
+    def find_similar_strings(input_list):
+        ids_within_1 = []
+        for box_id in input_list:
+            for box_id_to_match in input_list:
+                if box_id != box_id_to_match:
+                    hammed_distance = Day2.distance_hammed(box_id, box_id_to_match)
+                    if hammed_distance <= 1:
+                        box_id_within_1_ham = box_id
+                        ids_within_1.append(box_id_within_1_ham)
+        return ids_within_1
+
+    @staticmethod
     def create_hash_from_duplicates(BoxIdTally):
         list_hash = BoxIdTally.double * BoxIdTally.triple
         return list_hash
+
+    @staticmethod
+    def distance_hammed(input_string1, input_string2):
+        assert len(input_string1) == len(input_string2)
+        return sum(c1 != c2 for c1, c2 in zip(input_string1, input_string2))
