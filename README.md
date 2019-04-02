@@ -7,12 +7,14 @@
 
 
 ##### Reqs
-* pyenv
 * pipenv
 * python 3.7.1
 
 
 ##### installation Instructions
 * pipenv install --dev
+
+##### How to Run
+* pytest
 
 
