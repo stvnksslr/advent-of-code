@@ -7,7 +7,7 @@ verify_ssl = true
 ipython = "*"
 flake8 = "*"
 pytest = "*"
-black = "*"
+pytest-cov = "*"
 
 [packages]
 
