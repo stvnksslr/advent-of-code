@@ -1,3 +1,4 @@
+---
 kind: pipeline
 name: default
 
@@ -15,3 +16,8 @@ steps:
       - pipenv run pytest --cov-report xml --cov=advent_of_code advent_of_code
       - pipenv run ./cc-test-reporter before-build
       - pipenv run ./cc-test-reporter after-build --coverage-input-type coverage.py --exit-code $?
+---
+kind: signature
+hmac: 185b22ca791ad223414e52710a7928e9acd8d06153d175723b03a912b6e14ebe
+
+...
