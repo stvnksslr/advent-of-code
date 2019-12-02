@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/stvnksslr/.virtualenvs/2019-ydOJsaaY-py3.8/bin/python",
+    "python.pythonPath": "/home/stvnksslr/.virtualenvs/2019-vCQEsY_L-py3.8/bin/python",
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
     "python.formatting.provider": "black",
