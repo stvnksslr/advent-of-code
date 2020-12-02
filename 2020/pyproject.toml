@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "advent-of-code-2020"
+version = "0.0.0"
+description = "project containing the solutions for advent of code 2020"
+authors = ["Steven Kessler <stvnksslr@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
