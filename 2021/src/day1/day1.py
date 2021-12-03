@@ -31,6 +31,7 @@ def check_list_of_summed_depths(input_list):
         if current_depth < len(input_list) \
                 and second_index < len(input_list) \
                 and third_index < len(input_list):
+
             current_sum = input_list[current_depth] + \
                           input_list[second_index] + \
                           input_list[third_index]
